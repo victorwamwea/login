@@ -5,12 +5,13 @@ body {
     --color-error: #cc3333;
     --color-success: #4bb544;
     --border-radius: 4px;
-
     margin: 0;
-    height: 100vh;
+    padding-top: 60px; /* Adjusted to account for fixed navbar height */
+    height: calc(100vh - 60px); /* Adjusted to account for fixed navbar height */
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column; /* Changed to column to allow for natural document flow */
+    align-items: center; /* Center children horizontally */
+    justify-content: center; /* Center children vertically */
     font-size: 18px;
     background: url(Computer-Programming-Languages.jpg);
     background-size: cover;
@@ -19,13 +20,16 @@ body {
 .container {
     width: 400px;
     max-width: 400px;
-    margin: 1rem;
+    margin: 0 auto; /* Center container in the available space */
     padding: 2rem;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
     border-radius: var(--border-radius);
     background: #ffffff;
+    display: flex; /* Added to center content within the container */
+    flex-direction: column; /* Align items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
 }
-
 .container,
 .form__input,
 .form__button {
@@ -127,4 +131,155 @@ body {
 
 .form__link:hover {
     text-decoration: underline;
+}
+.navbar {
+    position: fixed; /* Make navbar fixed at the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensure navbar stretches across the screen */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-primary);
+    padding: 0 20px;
+    height: 60px;
+    z-index: 1000; /* Ensure navbar is above other content */
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 40px;
+    padding: 30px;
+}
+
+.nav-links li {
+    margin: 0 35px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        right: 0;
+        top: 60px;
+        height: 100vh;
+        width: 200px;
+        background-color: var(--color-primary-dark);
+        flex-direction: column;
+        align-items: center;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links.active {
+        transform: translateX(0);
+    }
+}
+.login-btn {
+    background-color: var(--color-secondary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    margin:0 40px;
+}
+.modal-content {
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+}
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.form__title {
+    margin-bottom: 20px;
+}
+
+.form__input-group {
+    margin-bottom: 15px;
+}
+
+.form__input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+}
+
+.form__button {
+    width: 100%;
+    padding: 10px;
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+
+.form__text {
+    text-align: center;
+}
+
+.form__link {
+    color: var(--color-primary);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.form--hidden {
+    display: none;
 }

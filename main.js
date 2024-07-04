@@ -15,6 +15,7 @@ function clearInputError(inputElement) {
     inputElement.parentElement.querySelector(".form__input-error-message").textContent = "";
 }
 
+
 document.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.querySelector("#login");
     const createAccountForm = document.querySelector("#createAccount");
@@ -61,5 +62,46 @@ document.addEventListener("DOMContentLoaded", () => {
         inputElement.addEventListener("input", e => {
             clearInputError(inputElement);
         });
+    });
+});
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const loginBtn = document.querySelector('.login-btn');
+    const modal = document.getElementById('modal');
+    const closeBtn = document.getElementById('close-btn');
+    const linkCreateAccount = document.getElementById('linkCreateAccount');
+    const linkLogin = document.getElementById('linkLogin');
+    const loginForm = document.getElementById('login');
+    const createAccountForm = document.getElementById('createAccount');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    loginBtn.addEventListener('click', () => {
+        modal.style.display = 'flex';
+    });
+
+    closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+    linkCreateAccount.addEventListener('click', (event) => {
+        event.preventDefault();
+        loginForm.classList.add('form--hidden');
+        createAccountForm.classList.remove('form--hidden');
+    });
+
+    linkLogin.addEventListener('click', (event) => {
+        event.preventDefault();
+        createAccountForm.classList.add('form--hidden');
+        loginForm.classList.remove('form--hidden');
     });
 });
