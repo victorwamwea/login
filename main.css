@@ -155,10 +155,12 @@ body {
     display: flex;
     gap:20px;
     font-weight:bold ;
+    margin-left: 40px;
 }
 
 .nav-links li {
     margin: 0 25px;
+    
 }
 
 .nav-links a {
@@ -312,32 +314,40 @@ body {
     display: none;
 }
 .hero {
+    padding:20px;
+    background-color:#ddedf5;
+    margin:auto;
+    display:flex;
+}
+.hero-container{
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 50px ;
-    background-color: #f8f8f8;
-    background: url(pexels-shkrabaanthony-5215009.jpg);
-    background-size: cover;
-    height: 70vh;
+    width: 100%;
+    margin: 0 auto;
 }
-
 .hero-content {
-    max-width: 40%;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
 }
-
-/* Consolidated .hero-content h1 styles */
+  
 .hero-content h1 {
-    font-size: 2.5rem;
+    font-size: 4.0rem;
     margin-bottom: 20px;
     font-weight: bold;
+    max-width: 50%;
+    padding: 10px;
+    margin-left: 30px;
+    margin-top: 10px;
+   
 }
 
 .hero-content p {
-    margin-bottom: 20px;
-    font-weight: bold;
-    font-size: 1.2rem;
-    padding-left: 10%;
+    margin: 20px;
+    
+    font-size: 2.0rem;
+    
+    
 }
 
 .btn {
@@ -353,18 +363,27 @@ body {
     background-color: white;
     color: #ff6600; /* Darker orange on hover */
   }
+  .btn-patient {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    background-color: #00c6c6;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+}
+.btn-patient:hover {
+    background-color: white;
+    color: #00c6c6; /* Darker orange on hover */
+  }
 .hero-image {
-    object-fit: cover;
-    max-width: 100%;
-    height: auto;
-    display: block; /* Maintain aspect ratio */
+    border-radius: 10%;
+    height: 700px;
+    display: flex;
+    margin-right: 10px;
+ 
 }
 
-.happy-customers {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
 .services {
     padding: 50px 0;
 }
@@ -394,12 +413,6 @@ body {
     border-radius: var(--border-radius);
     margin: 10px;
 }
-
-.service-card img {
-    max-width: 100px;
-    margin-bottom: 20px;
-}
-
 .service-card h3 {
     margin-bottom: 10px;
 }
@@ -418,35 +431,47 @@ body {
 .read-more:hover {
     text-decoration: underline;
 }
+.service-card-line {
+    width: 100%; /* Match the width of the containing element */
+    height: 1px; /* Set the height of the line */
+    background-color: #ff6600; /* Set the color of the line */
+    margin-top: 20px; /* Adjust the space above the line */
+    border: none; /* Remove default border styles */
+    padding:10px;
+  }
 /* Journey section styling */
 .journey {
-    padding: 50px 0;
-    background-color: #f8f8f8;
+    padding:20px;
+    background-color: #00c6c6;
+    margin:auto;
+    display:flex;
 }
 
 .journey-container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    max-width: 1000px;
+    width: 100%;
     margin: 0 auto;
 }
 
 .journey-image img {
-    max-width: 70%;
+    max-width: 800px;
     height: auto;
-    display: block;
+    display: flex;
+    border-radius: 10px;
+    margin-right: 10px;
 }
 
 .journey-content {
     max-width: 50%;
-    padding-right: 20px;
-    margin: 20px;
+    padding: 10px;
+    margin-left: 30px;
 }
 
 .journey-content h2 {
     font-size: 2rem;
     margin-bottom: 20px;
+    color:var(--color-primary);
 }
 
 .journey-content ul {
@@ -457,6 +482,7 @@ body {
 .journey-content ul li {
     margin-bottom: 10px;
 }
+
 
 .journey-content .btn {
     margin-top: 20px;
@@ -496,22 +522,35 @@ body {
     max-width: 30%;
     border-radius: var(--border-radius);
     margin: 10px;
+     /* Make the card a flex container */
+    flex-direction:flex;
+   
     
 }
 
 .testimonial-card img {
-    max-width: 100px;
-    margin-bottom: 20px;
-    border-radius: 50%;
+    max-width: 50px;
+    margin-left: auto;
+    border-radius: 40%;
+    width: 80px; /* Set a fixed width for the image */
+    height: 80px; /* Set a fixed height for the image (adjust if needed) */
+    object-fit: cover; /* Ensure the image fills the space while maintaining aspect ratio */
+    border-radius: 50%; /* Make the image circular (optional) */
+    
 }
 
 .testimonial-card h3 {
     margin-bottom: 5px;
+    color:#0ef1f1;
+    margin: 0; /* Remove default margins for better spacing */
+    font-size: 16px; /* Set a preferred font size */
+    width: 3.5; 
+    display:block;
 }
-
 .testimonial-card p {
-    margin-bottom: 20px;
-}
+    color:#ff6600;
+    margin-top: 10px; /* Add margin for spacing above paragraph */
+  }
 
 /* Stats section styling */
 .stats {
@@ -582,7 +621,7 @@ body {
 
 /* Footer styling */
 footer {
-    background-color: #f8f8f8;
+    background-color: #ddedf5;
     padding: 50px 0;
 }
 
@@ -618,7 +657,7 @@ footer {
 
 .footer-column ul li a {
     text-decoration: none;
-    color: #333333;
+    color: #ff6600;
 }
 
 .footer-column form {
@@ -630,6 +669,7 @@ footer {
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #cccccc;
+    border-radius: var(--border-radius);
 }
 
 .footer-column button {
@@ -638,5 +678,6 @@ footer {
     background-color: #ff6600;
     color: #ffffff;
     cursor: pointer;
+    border-radius:var(--border-radius)
 }
 
